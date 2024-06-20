@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
     <title>Title</title>
@@ -28,26 +29,44 @@
             </div>
             <div class="field">
                 <label>이메일</label>
-                <input type="text" name="email" value="${loginUser.email}"/>
+                <input type="text" name="email" value="${loginUser.email}" readonly/>
             </div>
             <div class="field">
-                <label>제목</label><input type="text" name="title"/>
+                <label>제목</label><input type="text" name="title" value="${dto.title}"/>
             </div>
             <div class="field">
-                <label>내용</label><textarea name="content"rows="10" cols="100"></textarea>
+                <label>내용</label><textarea name="content"rows="10" cols="100">${dto.content}</textarea>
             </div>
             <div class="field">
                 <label>이미지</label>
                 <input type="button" value="파일 선택" onclick="selectImg()"/>
             </div>
-            <div class="field">
-                <label>이미지 미리보기</label>
-                <img src="" id="previewimg" width="150" style="display: none"/>
-                <input type="hidden" name="imgfilename">
-                <input type="hidden" name="image">
-                <div id="image"></div>
-                <div id="imgfilename"></div>
-            </div>
+            <c:choose>
+                <c:when test="${empty dto.image}">
+                    <div class="field">
+                        <div style="flex: 4">
+                            <label>이미지 미리보기</label>
+                            <img src="" id="previewimg" width="150" style="display: none"/>
+                            <input type="hidden" name="savefilename">
+                            <input type="hidden" name="image">
+                            <div id="image"></div>
+                            <div id="savefilename"></div>
+                        </div>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="field">
+                        <div style="flex: 4">
+                            <label>이미지 미리보기</label>
+                            <img src="/upload/${dto.savefilename}" id="previewimg" width="150"/>
+                            <input type="hidden" name="savefilename" value="${dto.savefilename}">
+                            <input type="hidden" name="image" value="${dto.image}">
+                            <div id="image">${dto.image}</div>
+                            <div id="savefilename">${dto.savefilename}</div>
+                        </div>
+                    </div>
+                </c:otherwise>
+            </c:choose>
             <div class="field">
                 <input type="submit" value="작성완료"/>
                 <input type="button" value="뒤로가기"  onclick="history.back()">
