@@ -3,7 +3,7 @@ function go_cart(){
 		alert("수량을 입력하세요");
 		 document.formm.quantity.focus();
 	}else{
-		document.formm.action = 'shop.do?command=cartInsert';
+		document.formm.action = 'cartInsert';
 		document.formm.submit();
 	}	
 	
@@ -19,13 +19,14 @@ function go_cart_delete(){
 	
 	var count = 0;
 	// 혹시라도 체크박스에 체크를 하나도 안넣고 삭제버튼을 눌렀는지 검사
+
 	if( document.cartFrm.cseq.length == undefined ){
-		// 체크박스가 한개라면, 체크박스가 단일 변수로 인식
+		// 체크박스가 한 개 >> 체크박스가 단일 변수로 인식
 		if( document.cartFrm.cseq.checked==true){
 			count++;
 		}		
 	}else{
-		// 체크박스가 두개이상이라면,  체크박스들이 배열이라면
+		// 체크박스가 두 개 이상 >> 체크박스들을 배열로 가져옴
 		for(var i=0; i<document.cartFrm.cseq.length; i++){
 			if( document.cartFrm.cseq[i].checked== true){
 				count++;
@@ -34,11 +35,11 @@ function go_cart_delete(){
 	}
 	
 	if( count == 0){
-		alert("삭제할 항복을 선택하세요");
+		alert("삭제할 항목을 선택하세요");
 	}else{
-		var ans = confirm("선택한 항목을 삭제할까요?");
+		var ans = confirm("선택한 항목을 삭제할까예?");
 		if( ans ){
-			document.cartFrm.action = "shop.do?command=cartDelete";
+			document.cartFrm.action = "cartDelete";
 			document.cartFrm.submit();
 		}
 	}
@@ -60,11 +61,11 @@ function go_order_insert(){
 		}
 	}	
 	if( count == 0){
-		alert("삭제할 항목을 선택하세요");
+		alert("주문할 항목을 선택하세요");
 	}else{
-		var ans = confirm("선택한 항목을 주문할까요?");
+		var ans = confirm("선택한 항목을 주문할까예?");
 		if( ans ){
-			document.cartFrm.action = "shop.do?command=orderInsert";
+			document.cartFrm.action = "orderInsert";
 			document.cartFrm.submit();
 		}
 	}
@@ -75,7 +76,7 @@ function go_order_insert(){
 function go_order(){
 	var ans = confirm("현재 상품을 주문할까요?");
 	if( ans ){
-		document.formm.action = "shop.do?command=orderInsertOne";
+		document.formm.action = "orderInsertOne";
 		document.formm.submit();
 	}
 }
@@ -110,7 +111,7 @@ function go_updateMember(){
 function withdrawal(){
 	var ans = confirm("정말로 탈퇴하시겠습니까?")
 	if( ans ){
-		location.href="shop.do?command=deleteMember";
+		location.href="deleteMember";
 	}
 }
 

@@ -23,6 +23,7 @@ public class MemberVO {
     private String address3;
     private String useyn;
     private Timestamp indate;
+    private String provider;
 
 
 }

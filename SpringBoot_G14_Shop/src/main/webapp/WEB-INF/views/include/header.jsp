@@ -40,11 +40,11 @@
          </nav>
          <nav id="category_menu">
 
-               <a href="category&kind=1">Heels</a>
-               <a href="category&kind=2">Boots</a>
-               <a href="category&kind=3">Sandal</a>
-               <a href="category&kind=4">Sneakers</a>
-               <a href="category&kind=5">Sleeper</a>
+               <a href="category?kind=1">Heels</a>
+               <a href="category?kind=2">Boots</a>
+               <a href="category?kind=3">Sandal</a>
+               <a href="category?kind=4">Sneakers</a>
+               <a href="category?kind=5">Sleeper</a>
 
          </nav>
    </header>

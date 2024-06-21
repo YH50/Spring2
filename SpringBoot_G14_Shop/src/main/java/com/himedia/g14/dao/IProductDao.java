@@ -9,4 +9,6 @@ import java.util.List;
 public interface IProductDao {
     List<ProductVO> getBestList();
     List<ProductVO> getNewList();
+    List<ProductVO> getKindList(String kind);
+    Object getProduct(int pseq);
 }

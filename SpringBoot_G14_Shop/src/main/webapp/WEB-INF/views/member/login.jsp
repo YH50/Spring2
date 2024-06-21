@@ -18,7 +18,7 @@
                 <input type="button" value="FIND ID"  onclick="" >
             </div>
             <div class="btn">
-                <input type="button" value="KAKAO" onClick="" style="color: black; background-color: #d3d301">
+                <input type="button" value="KAKAO" onclick="location.href='kakaostart'" style="color: black; background-color: #d3d301">
                 <input type="button" value="NAVER"  onclick="" style="background-color: forestgreen">
                 <input type="button" value="GOOGLE"  onclick="" style="background-color: crimson">
             </div>

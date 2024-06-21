@@ -39,7 +39,7 @@ function idcheck(){
 		documnet.joinForm.userid.focus();
 		return;
 	}
-	var url = "shop.do?command=idcheckForm&userid=" + document.joinForm.userid.value;
+	var url = "idcheckForm?userid=" + document.joinForm.userid.value;
 	var opt = "toolbar=no, menubar=no, resizable=no, width=500, height=250, scrollbars=no";
 	
 	window.open(url, "idcheck", opt);
@@ -76,32 +76,30 @@ function addressOK( zip_num, sido, gugun, dong ){
 
 function go_save(){
 	if ( document.joinForm.userid.value == "") {
-		alert("아이디를 입력하여 주세요."); 
+		alert("아이디 입력해라!");
 		document.joinForm.userid.focus();
 	}else if( document.joinForm.reid.value != document.joinForm.userid.value){
-		alert("아이디 중복확인을 하지 않았습니다");		
+		alert("아이디 중복확인해라!!");
 		document.joinForm.userid.focus();
 	}else if( document.joinForm.pwd.value == "") {
-	    alert("비밀번호를 입력해 주세요.");	    
+	    alert("비밀번호 입력해라!!");
 	    document.joinForm.pwd.focus();
 	} else if( document.joinForm.pwd.value != document.joinForm.pwdCheck.value) {
-	    alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");	    
+	    alert("비밀번호 똑디 안치나!!");
 	    document.joinForm.pwd.focus();
 	} else if( document.joinForm.name.value == "") {
-	    alert("이름을 입력해 주세요.");	    
+	    alert("이름 대라!!");
 	    document.joinForm.name.focus();
 	} else if( document.joinForm.phone.value == "") {
-	    alert("전화번호를 입력해 주세요.");	   
+	    alert("마 전화번호!!");
 	    document.joinForm.phone.focus();
 	}else if( document.joinForm.email.value == "") {
-	    alert("이메일을 입력해 주세요.");	   
+	    alert("이메일 어드레스 쳐라!!");
 	    document.joinForm.email.focus();
 	} else{
 	    document.joinForm.submit();
 	}
 }
-
-
 
 
 $(function(){
