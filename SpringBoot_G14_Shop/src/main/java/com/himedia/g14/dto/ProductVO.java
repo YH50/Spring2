@@ -17,6 +17,6 @@ public class ProductVO {
     private String image;
     private String useyn;
     private String bestyn;
-    private Timestamp writedate;
+    private Timestamp indate;
     private String savefilename;
 }

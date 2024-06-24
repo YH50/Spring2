@@ -81,7 +81,27 @@ function go_order(){
 	}
 }
 
+function qnaViewWithPass(pass, qseq) {
+	var inputPass = prompt("비밀글입니다. 비밀번호 쳐주이소");
+	if (pass == inputPass) {
+		location.href = "qnaView?qseq=" + qseq ;
+	}else{
+		alert("비밀번호 똑디 치소!!");
+	}
+}
 
+function qnaView(qseq) {
+	location.href = "qnaView?qseq=" + qseq;
+}
+
+function enable() {
+	if (document.formm.secret.checked == true) {
+		document.formm.pass.disabled = false;
+	}else{
+		document.formm.pass.disabled = true;
+		document.formm.pass.value="";
+	}
+}
 
 
 
